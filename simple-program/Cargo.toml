@@ -1,0 +1,26 @@
+[package]
+name = "simple-program"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+simple-program-common = { path = "../simple-program-common", features = ["user"] }
+
+anyhow = { workspace = true, default-features = true }
+aya = { workspace = true }
+aya-log = { workspace = true }
+env_logger = { workspace = true }
+libc = { workspace = true }
+log = { workspace = true }
+tokio = { workspace = true, features = ["macros", "rt", "rt-multi-thread", "net", "signal"] }
+clap = { workspace = true, features = ["derive"] }
+ctrlc = { workspace = true }
+bytes = "1.8.0"
+
+[build-dependencies]
+cargo_metadata = { workspace = true }
+simple-program-ebpf = { path = "../simple-program-ebpf" }
+
+[[bin]]
+name = "simple-program"
+path = "src/main.rs"
