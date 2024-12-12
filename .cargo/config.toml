@@ -1,0 +1,10 @@
+#[build]
+#jobs=12
+#linker="clang"
+#rustflags= ["-C","link-args=--ld-path=mold"  ]
+
+#[unstable]
+#sparse-registry=true
+
+# mold -run
+# export https_proxy=http://192.168.0.106:7890 http_proxy=http://192.168.0.106:7890 all_proxy=socks5://192.168.0.106:7890
